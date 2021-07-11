@@ -1,0 +1,15 @@
+footer {
+  padding: 0.4rem;
+  text-align: center;
+  background-color: $black;
+  color: $white;
+  font-size: 0.8rem;
+
+  p {
+    color: $white;
+  }
+  
+  span {
+    color: $red;
+  }
+}

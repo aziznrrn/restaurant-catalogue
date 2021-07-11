@@ -1,0 +1,53 @@
+restaurant-list {
+  display: grid;
+  @include respond(small-screen) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(large-screen) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  restaurant-card {
+    margin: 0.8rem;
+    background-color: $mask;
+  }
+}
+
+.restaurant-card {
+  position: relative;
+  &__img {
+    height: 14rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__rating {
+    position: absolute;
+    right: -0.8rem;
+    bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 0.4rem;
+    background-color: $black;
+    color: $white;
+    font-family: 'Noto Sans', sans-serif;
+  }
+
+  &__text {
+    padding: 0.5rem 1rem;
+      
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__desc {
+    font-size: 0.875rem;
+    margin-bottom: 0.2rem;
+  }
+}

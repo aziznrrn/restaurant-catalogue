@@ -1,0 +1,121 @@
+.app-bar {
+  background-color: $black;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__brand {
+    font-family: Caveat, 'Noto Sans', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    position: relative;
+    color: $white;
+    padding-inline: 1rem;
+
+    em {
+      color: $red;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    transition: all .3s;
+
+    @include respond(small-screen) {
+      position: relative;
+      right: 0;
+      #btn-close {
+        display: none;
+      }
+    }
+
+    ul {
+      list-style: none;
+      @include respond(small-screen) {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1rem;
+      }
+
+      .nav-link:link, .nav-link:visited {
+        color: $white;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        padding-inline: 0.8rem;
+      }
+
+      .nav-link:hover {
+        font-weight:600;
+        color: $white;
+      }
+    }
+  }
+
+  .active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 2;
+      font-size: 2rem;
+      a:link, a:visited {
+        color: $black;
+      }
+    }
+  }
+}
+
+#btn-menu {
+  font-size: 2rem;
+  color: $white;
+  border: none;
+  @include respond(small-screen) {
+    display: none;
+  }
+}
+
+#btn-close {
+  position: relative;
+  top: 2rem;
+  font-size: 5rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+
+.skip {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  padding: 1rem;
+  background-color: $red;
+  color: $white;
+  z-index: 100;
+  font-size: 1.2rem;
+  &:focus {
+    top: 0;
+    left: 0;
+  }
+}

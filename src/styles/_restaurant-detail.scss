@@ -1,0 +1,27 @@
+.restaurant-detail {
+  margin-top: 1.6rem;
+
+  &__img {
+    height: 20rem;
+    width: 100%;
+    @include respond(small-screen) {
+      height: 22rem
+    }
+    @include respond(large-screen) {
+      height: 24rem
+    }
+  }
+
+  &__rating {
+    position: absolute;
+    color: $white;
+    background-color: $red;
+    padding: 0.6rem;
+    font-size: 2.4rem;
+    z-index: 99;
+  }
+
+  &__description {
+    padding: 1rem;
+  }
+}

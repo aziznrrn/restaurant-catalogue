@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $black;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1444px;
+    margin-inline: auto;
+}
+
+button {
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}

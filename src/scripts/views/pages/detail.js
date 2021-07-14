@@ -7,7 +7,7 @@ const Detail = {
   async render () {
     return `
       <restaurant-detail></restaurant-detail>
-      <favorite-btn></favorite-btn>
+      <div id="favBtnContainer"></div>
     `
   },
 
@@ -18,7 +18,7 @@ const Detail = {
     restaurantDetail.init(restaurant)
 
     FavoriteBtnInitiator.init({
-      favoriteBtn: document.querySelector('favorite-btn'),
+      favBtnContainer: document.querySelector('#favBtnContainer'),
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

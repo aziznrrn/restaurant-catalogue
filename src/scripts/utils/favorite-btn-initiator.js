@@ -1,9 +1,9 @@
 import FavoriteRestaurant from './favorite-restaurant'
-import '../components/favorite-btn'
+import { createAddToFavBtn, createRemoveFromFavBtn } from '../views/templates/template-fav-btn'
 
 const FavoriteBtnInitiator = {
-  async init ({ favoriteBtn, restaurant }) {
-    this._favoriteBtn = favoriteBtn
+  async init ({ favBtnContainer, restaurant }) {
+    this._favBtnContainer = favBtnContainer
     this._restaurant = restaurant
 
     await this._renderButton()
@@ -21,16 +21,16 @@ const FavoriteBtnInitiator = {
   },
 
   _renderFavorite () {
-    this._favoriteBtn.isFavorited = false
-    this._favoriteBtn.addEventListener('click', async () => {
+    this._favBtnContainer.innerHTML = createAddToFavBtn();
+    document.querySelector('#favorite-btn').addEventListener('click', async () => {
       await FavoriteRestaurant.putRestaurant(this._restaurant)
       this._renderButton()
     })
   },
 
   _renderFavorited () {
-    this._favoriteBtn.isFavorited = true
-    this._favoriteBtn.addEventListener('click', async () => {
+    this._favBtnContainer.innerHTML = createRemoveFromFavBtn()
+    document.querySelector('#favorite-btn').addEventListener('click', async () => {
       await FavoriteRestaurant.deleteRestaurant(this._restaurant.id)
       this._renderButton()
     })

@@ -21,7 +21,7 @@ const FavoriteBtnInitiator = {
   },
 
   _renderFavorite () {
-    this._favBtnContainer.innerHTML = createAddToFavBtn();
+    this._favBtnContainer.innerHTML = createAddToFavBtn()
     document.querySelector('#favorite-btn').addEventListener('click', async () => {
       await FavoriteRestaurant.putRestaurant(this._restaurant)
       this._renderButton()

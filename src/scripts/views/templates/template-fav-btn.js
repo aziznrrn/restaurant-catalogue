@@ -22,5 +22,5 @@ const createRemoveFromFavBtn = () => `
 
 export {
   createAddToFavBtn,
-  createRemoveFromFavBtn,
+  createRemoveFromFavBtn
 }

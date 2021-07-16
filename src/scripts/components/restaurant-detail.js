@@ -9,13 +9,13 @@ class RestaurantDetail extends HTMLElement {
     this.render()
   }
 
-  _imageSize() {
+  _imageSize () {
     const screenWidth = window.screen.availWidth
     return (screenWidth > 700)
       ? 'large'
       : (screenWidth > 400)
-        ? 'medium'
-        : 'small'
+          ? 'medium'
+          : 'small'
   }
 
   render () {

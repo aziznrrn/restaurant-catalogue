@@ -5,6 +5,20 @@ const Home = {
   async render () {
     return `
       <div class="jumbotron">
+        <picture>
+          <source media="(max-width: 420px)" srcset="/images/hero_small.webp"
+                  style="width: 100%; height: 100%; object-fit: cover">
+          <source media="(max-width: 420px)" srcset="/images/hero_small.jpg"
+                  style="width: 100%; height: 100%; object-fit: cover">
+          <source media="(max-width: 800px)" srcset="/images/hero_medium.webp"
+                  style="width: 100%; height: 100%; object-fit: cover">
+          <source media="(max-width: 800px)" srcset="/images/hero_medium.webp"
+                  style="width: 100%; height: 100%; object-fit: cover">
+          <source srcset="/images/hero.webp"
+                  style="width: 100%; height: 100%; object-fit: cover">
+          <img src="/images/hero.jpg" alt="banner"
+                  style="width: 100%; height: 100%; object-fit: cover">
+        </picture>
         <h1 class="jumbotron__text">
           Eat Well, <em>Live Well</em>
         </h1>

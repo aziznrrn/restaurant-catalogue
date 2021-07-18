@@ -1,7 +1,7 @@
 import '../../components/restaurant-detail'
 import UrlParser from '../../routes/url-parser'
 import DataSource from '../../data/data-source'
-import FavoriteBtnInitiator from '../../utils/favorite-btn-initiator'
+import FavoriteBtnPresenter from '../../utils/favorite-btn-presenter'
 
 const Detail = {
   async render () {
@@ -17,7 +17,7 @@ const Detail = {
     const restaurantDetail = document.querySelector('restaurant-detail')
     restaurantDetail.init(restaurant)
 
-    FavoriteBtnInitiator.init({
+    FavoriteBtnPresenter.init({
       favBtnContainer: document.querySelector('#favBtnContainer'),
       restaurant: {
         id: restaurant.id,

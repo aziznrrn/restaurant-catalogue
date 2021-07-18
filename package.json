@@ -6,7 +6,8 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "test": "karma start"
   },
   "author": "Muhammad Aziz Nurrohman",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "eslint": "^7.30.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jasmine": "^4.1.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "file-loader": "^6.2.0",

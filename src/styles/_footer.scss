@@ -1,11 +1,12 @@
 footer {
-  padding: 0.4rem;
-  text-align: center;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
   background-color: $black;
-  color: $white;
-  font-size: 0.8rem;
 
   p {
     color: $white;
+    font-size: 0.8rem;
+    text-align: center;
   }
 }

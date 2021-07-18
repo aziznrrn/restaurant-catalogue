@@ -1,7 +1,7 @@
-import FavoriteRestaurant from './favorite-restaurant'
+import FavoriteRestaurant from '../data/favorite-restaurant'
 import { createAddToFavBtn, createRemoveFromFavBtn } from '../views/templates/template-fav-btn'
 
-const FavoriteBtnInitiator = {
+const FavoriteBtnPresenter = {
   async init ({ favBtnContainer, restaurant }) {
     this._favBtnContainer = favBtnContainer
     this._restaurant = restaurant
@@ -37,4 +37,4 @@ const FavoriteBtnInitiator = {
   }
 }
 
-export default FavoriteBtnInitiator
+export default FavoriteBtnPresenter

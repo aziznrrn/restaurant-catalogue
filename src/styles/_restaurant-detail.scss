@@ -3,7 +3,6 @@
 
   &__img {
     height: 20rem;
-    width: 100%;
     @include respond(small-screen) {
       height: 22rem
     }

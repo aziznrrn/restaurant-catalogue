@@ -1,4 +1,4 @@
-import FavoriteRestaurant from '../../utils/favorite-restaurant'
+import FavoriteRestaurant from '../../data/favorite-restaurant'
 
 const Favorite = {
   async render () {
@@ -28,7 +28,7 @@ const Favorite = {
     const restaurantList = document.querySelector('restaurant-list')
     restaurantList.init(restaurants)
 
-    if(restaurants.length === 0) {
+    if (restaurants.length === 0) {
       document.querySelector('.page-header')
         .parentElement.append(this.messageEmptyList())
     }

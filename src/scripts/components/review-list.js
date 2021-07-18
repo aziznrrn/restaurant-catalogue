@@ -10,8 +10,10 @@ class ReviewList extends HTMLElement {
       const element = document.createElement('div')
       element.classList.add('review-card')
       element.innerHTML = `
-        <h4>${review.name}</h4>
-        <small>${review.date}</small>
+        <span class="review-card__title">
+          <h4>${review.name}</h4>
+          <small>${review.date}</small>
+        </span>
         <p>${review.review}</p>
       `
       this.appendChild(element)

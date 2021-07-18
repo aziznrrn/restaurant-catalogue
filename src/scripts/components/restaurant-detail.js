@@ -9,15 +9,6 @@ class RestaurantDetail extends HTMLElement {
     this.render()
   }
 
-  _imageSize () {
-    const screenWidth = window.screen.availWidth
-    return (screenWidth > 700)
-      ? 'large'
-      : (screenWidth > 400)
-          ? 'medium'
-          : 'small'
-  }
-
   render () {
     this.innerHTML = `
     <div class="page-header">
@@ -27,10 +18,14 @@ class RestaurantDetail extends HTMLElement {
     </div>
     <div class="restaurant-detail">
       <span class="restaurant-detail__rating">${this._restaurant.rating.toFixed(1)}</span>
-      <div class="restaurant-detail__img"
-           style="background-image: url(${CONFIG.BASE_IMG}${this._imageSize()}/${this._restaurant.pictureId});
-                  background-size: cover; background-position: center">
-      </div>
+      <picture>
+        <source media=(max-width: 420px) srcset="${CONFIG.BASE_IMG}small/${this._restaurant.pictureId}"
+                style="width: 100%; height: 100%; object-fit: cover">
+        <source media=(max-width: 800px) srcset="${CONFIG.BASE_IMG}medium/${this._restaurant.pictureId}"
+                style="width: 100%; height: 100%; object-fit: cover">
+        <img src="${CONFIG.BASE_IMG}large/${this._restaurant.pictureId}"
+                style="width: 100%; height: 100%; object-fit: cover">
+      </picture>
       <div class="restaurant-detail__description">
         <div>
           <h3 class="page-subheader">Description</h3>

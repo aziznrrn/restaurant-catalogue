@@ -10,10 +10,28 @@ const Favorite = {
     `
   },
 
+  messageEmptyList () {
+    const message = document.createElement('div')
+    message.style.marginTop = '7.65rem'
+    message.innerHTML = `
+      <span style="text-align: center; line-height: 2">
+        <h3><b>Empty Favorite List</b></h3>
+        <p>Your favorite restaurants will appear here</p>
+      </span>
+    `
+
+    return message
+  },
+
   async afterRender () {
     const restaurants = await FavoriteRestaurant.getAllRestaurants()
     const restaurantList = document.querySelector('restaurant-list')
     restaurantList.init(restaurants)
+
+    if(restaurants.length === 0) {
+      document.querySelector('.page-header')
+        .parentElement.append(this.messageEmptyList())
+    }
   }
 }
 

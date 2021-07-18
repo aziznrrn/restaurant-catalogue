@@ -15,27 +15,32 @@ restaurant-list {
 
 .restaurant-card {
   position: relative;
+  overflow: hidden;
+  display: inline-block;
+
   &__img {
     height: 14rem;
-    width: 100%;
-    object-fit: cover;
+
+    img:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out 0.01s;
+    }
   }
 
   &__rating {
     position: absolute;
-    right: -0.8rem;
-    bottom: 1rem;
+    left: 0;
+    top: 1rem;
     font-size: 2rem;
     font-weight: 900;
     padding: 0.4rem;
-    background-color: $black;
-    color: $white;
-    font-family: 'Noto Sans', sans-serif;
+    background-color: $mask;
+    z-index: 99;
   }
 
   &__text {
     padding: 0.5rem 1rem;
-      
+
   }
 
   &__title {
@@ -44,6 +49,11 @@ restaurant-list {
     align-items: center;
     font-size: 1rem;
     margin-bottom: 0.4rem;
+
+    h2:hover {
+      text-decoration: underline;
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
   }
 
   &__desc {

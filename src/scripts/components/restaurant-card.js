@@ -12,9 +12,11 @@ class RestaurantCard extends HTMLElement {
         <span class="restaurant-card__rating">
           ${this._restaurant.rating.toFixed(1)}
         </span>
-        <img data-src="${CONFIG.BASE_IMG}small/${this._restaurant.pictureId}"
-             alt="picture of ${this._restaurant.name}"
-             class="restaurant-card__img lazyload">
+        <div class="restaurant-card__img">
+          <img data-src="${CONFIG.BASE_IMG}small/${this._restaurant.pictureId}"
+              alt="picture of ${this._restaurant.name}" class="lazyload"
+              style="width: 100%; height: 100%; object-fit: cover">
+        </div>
         <div class="restaurant-card__text">
           <div class="restaurant-card__title">
             <h2>${this._restaurant.name}</h2>

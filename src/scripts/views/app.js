@@ -1,7 +1,6 @@
 import routes from '../routes/routes'
 import UrlParser from '../routes/url-parser'
 import DrawerInitiator from '../utils/drawer-initiator'
-import NotFound from './pages/not-found'
 
 class App {
   constructor ({ btnMenu, drawer, content, navLinks, btnClose }) {
@@ -26,10 +25,21 @@ class App {
   async renderPage () {
     const url = UrlParser.parseActiveUrlWithCombiner()
 
-    const page = (url in routes) ? routes[url] : NotFound
-    this._content.innerHTML = await page.render()
-    if (typeof page.afterRender === 'function') {
+    const page = routes[url] || null
+    if (page !== null) {
+      this._content.innerHTML = await page.render()
       await page.afterRender()
+    } else {
+      this._content.innerHTML = `
+        <div style="margin-top: 30vh">
+          <span style="text-align: center; line-height: 2">
+            <h2><b>404 Not Found</b></h2>
+            <a href="#/home">
+              <button class="back-to-home"><b>Back To Home Page</b></button>
+            </a>
+          </span>
+        </div>
+      `
     }
   }
 }

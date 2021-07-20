@@ -23,7 +23,7 @@ class RestaurantCard extends HTMLElement {
             <small>${this._restaurant.city}</small>
           </div>
           <p class="restaurant-card__desc">
-            ${this._restaurant.description.substr(0, 160)}...
+            ${this._restaurant.description.substr(0, 128)}...
           </p>
         </div>
       </a>

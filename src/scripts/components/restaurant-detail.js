@@ -28,11 +28,11 @@ class RestaurantDetail extends HTMLElement {
                   style="width: 100%; height: 100%; object-fit: cover">
         </picture>
       </div>
-      <div class="restaurant-detail__description">
-        <div>
+      <div class="restaurant-detail__info">
           <h3 class="page-subheader">Description</h3>
-          <p>${this._restaurant.description}</p>
-        </div>
+          <div class="restaurant-detail__description">
+            <p>${this._restaurant.description}</p>
+          </div>
         <div>
           <h3 class="page-subheader">Menus</h3>
           <menu-list><menu-list>

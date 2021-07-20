@@ -6,7 +6,7 @@ const Home = {
     return `
       <div class="jumbotron">
         <div class="banner">
-          <picture class="banner">
+          <picture>
             <source media="(max-width: 420px)" srcset="/images/hero_small.webp"
                     style="width: 100%; height: 100%; object-fit: cover">
             <source media="(max-width: 420px)" srcset="/images/hero_small.jpg"

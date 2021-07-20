@@ -2,16 +2,17 @@
   overflow:hidden;
   width: 100%;
   position: relative;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  border-radius: 0 0 0.8rem 0.8rem ;
 
   &__text {
     position: absolute;
-    font-size: 1rem;
-    bottom: 1.24rem;
-    right: 1.24rem;
+    font-size: 1.2rem;
+    bottom: 2.4rem;
+    right: 0;
     background-color: $mask;
-    padding-inline: 1rem;
+    padding-left: 1rem;
+    padding-right: 3rem;
+
     em {
       color: $red;
     }

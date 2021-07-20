@@ -26,9 +26,9 @@ describe('Favorite a Restaurant', () => {
     await TestFactories.createFavBtnPresenterWithRestaurant({ id: 1 })
 
     document.querySelector('#favorite-btn').dispatchEvent(new Event('click'))
-    const movie = await FavoriteRestaurant.getRestaurant(1)
+    const restaurant = await FavoriteRestaurant.getRestaurant(1)
 
-    expect(movie).toEqual({ id: 1 })
+    expect(restaurant).toEqual({ id: 1 })
 
     FavoriteRestaurant.deleteRestaurant(1)
   })

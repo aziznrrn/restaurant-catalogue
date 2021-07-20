@@ -10,6 +10,7 @@ restaurant-list {
   restaurant-card {
     margin: 0.8rem;
     background-color: $mask;
+    border-radius: 0.5rem;
   }
 }
 
@@ -20,6 +21,8 @@ restaurant-list {
 
   &__img {
     height: 14rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
 
     img:hover {
       transform: scale(1.1);
@@ -30,17 +33,20 @@ restaurant-list {
   &__rating {
     position: absolute;
     left: 0;
-    top: 1rem;
+    top: 0;
     font-size: 2rem;
     font-weight: 900;
     padding: 0.4rem;
-    background-color: $mask;
+    background-color: $red;
+    color: $white;
+    border-end-end-radius: 0.5rem;
+    border-start-start-radius: 0.5rem;
     z-index: 99;
   }
 
   &__text {
     padding: 0.5rem 1rem;
-
+    line-height: 1.5;
   }
 
   &__title {
@@ -52,7 +58,7 @@ restaurant-list {
 
     h2:hover {
       text-decoration: underline;
-      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: 0.3s ease-in 0.01s;
     }
   }
 

@@ -5,11 +5,9 @@ main {
     font-family: Caveat, sans-serif;
     text-align: center;
     padding-inline: 1rem;
-    width: fit-content;
-    margin-inline: auto;
+    margin-top: 1.4rem;
 
     h2 {
-      position: relative;
       font-size: 4rem;
     }
   }
@@ -21,8 +19,8 @@ main {
     margin-bottom: 1rem;
     position: relative;
     margin-inline: auto;
-    
-    &::before {
+
+    &::after {
       content: '';
       position: absolute;
       bottom: -6%;
@@ -31,7 +29,7 @@ main {
       left: -9%;
       display: block;
       background-color: $red;
-      z-index: -1;
+      z-index: 9;
     }
 
     @include respond(medium-screen) {
@@ -40,6 +38,33 @@ main {
         left: 0;
         width: 112%;
       }
+    }
+  }
+
+  .banner {
+    height: 20rem;
+    @include respond(small-screen) {
+      height: 22rem
+    }
+    @include respond(large-screen) {
+      height: 24rem
+    }
+  }
+
+  .back-to-home {
+    border-radius: 0.4rem;
+    background-color: $red;
+    padding: 1rem;
+    display: flex;
+    margin-inline: auto;
+    margin-top: 3rem;
+    border: none;
+    b {
+      color: $white;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

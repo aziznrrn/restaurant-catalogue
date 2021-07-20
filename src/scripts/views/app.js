@@ -1,6 +1,7 @@
 import routes from '../routes/routes'
 import UrlParser from '../routes/url-parser'
 import DrawerInitiator from '../utils/drawer-initiator'
+import NotFound from './pages/not-found'
 
 class App {
   constructor ({ btnMenu, drawer, content, navLinks, btnClose }) {
@@ -24,9 +25,12 @@ class App {
 
   async renderPage () {
     const url = UrlParser.parseActiveUrlWithCombiner()
-    const page = routes[url]
+
+    const page = (url in routes) ? routes[url] : NotFound
     this._content.innerHTML = await page.render()
-    await page.afterRender()
+    if (typeof page.afterRender === 'function') {
+      await page.afterRender()
+    }
   }
 }
 

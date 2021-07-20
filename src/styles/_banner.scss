@@ -1,0 +1,10 @@
+
+.banner {
+  height: 20rem;
+  @include respond(small-screen) {
+    height: 22rem
+  }
+  @include respond(large-screen) {
+    height: 24rem
+  }
+}

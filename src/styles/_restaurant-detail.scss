@@ -1,16 +1,6 @@
 .restaurant-detail {
   margin-top: 1.6rem;
 
-  &__img {
-    height: 20rem;
-    @include respond(small-screen) {
-      height: 22rem
-    }
-    @include respond(large-screen) {
-      height: 24rem
-    }
-  }
-
   &__rating {
     position: absolute;
     color: $white;

@@ -1,9 +1,9 @@
-import FavoriteRestaurant from '../data/favorite-restaurant'
 import { createAddToFavBtn, createRemoveFromFavBtn } from '../views/templates/template-fav-btn'
 
 const FavoriteBtnPresenter = {
-  async init ({ favBtnContainer, restaurant }) {
+  async init ({ favBtnContainer, favoriteRestaurant, restaurant }) {
     this._favBtnContainer = favBtnContainer
+    this._favoriteRestaurant = favoriteRestaurant
     this._restaurant = restaurant
 
     await this._renderButton()
@@ -16,14 +16,14 @@ const FavoriteBtnPresenter = {
   },
 
   async _isRestaurantExist (id) {
-    const restaurant = await FavoriteRestaurant.getRestaurant(id)
+    const restaurant = await this._favoriteRestaurant.getRestaurant(id)
     return !!restaurant
   },
 
   _renderFavorite () {
     this._favBtnContainer.innerHTML = createAddToFavBtn()
     document.querySelector('#favorite-btn').addEventListener('click', async () => {
-      await FavoriteRestaurant.putRestaurant(this._restaurant)
+      await this._favoriteRestaurant.putRestaurant(this._restaurant)
       this._renderButton()
     })
   },
@@ -31,7 +31,7 @@ const FavoriteBtnPresenter = {
   _renderFavorited () {
     this._favBtnContainer.innerHTML = createRemoveFromFavBtn()
     document.querySelector('#favorite-btn').addEventListener('click', async () => {
-      await FavoriteRestaurant.deleteRestaurant(this._restaurant.id)
+      await this._favoriteRestaurant.deleteRestaurant(this._restaurant.id)
       this._renderButton()
     })
   }

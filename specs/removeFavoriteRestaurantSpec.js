@@ -15,7 +15,7 @@ describe('Remove a restaurant from Favorite', () => {
     await FavoriteRestaurant.deleteRestaurant(1)
   })
 
-  it('should display remove from favorite button when the movie has been favorited', async () => {
+  it('should display remove from favorite button when the restaurant has been favorited', async () => {
     await TestFactories.createFavBtnPresenterWithRestaurant({ id: 1 })
 
     expect(document.querySelector('[aria-label="remove from favorite"]')).toBeTruthy()

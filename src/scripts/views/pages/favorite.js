@@ -34,7 +34,7 @@ const Favorite = {
     if (restaurants.length === 0) {
       const pageHeader = document.querySelector('.page-header')
       pageHeader.parentElement.append(this.messageEmptyList())
-      pageHeader.style.display = 'none';
+      pageHeader.style.display = 'none'
     }
   }
 }

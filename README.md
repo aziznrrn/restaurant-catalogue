@@ -1,2 +1,2 @@
 # restaurant-catalogue
-Second submission for Dicoding Front-End Expert course
+Submission for Dicoding Front-End Expert course
